@@ -1,0 +1,63 @@
+[gd_resource type="Resource" load_steps=18 format=2]
+
+[ext_resource path="res://data/elemental_types/poison.tres" type="Resource" id=1]
+[ext_resource path="res://data/status_effects/stat_evasion_up.tres" type="Resource" id=2]
+[ext_resource path="res://data/battle_move_scripts/PassiveRoundStatChange.gd" type="Script" id=3]
+[ext_resource path="res://data/status_effects/stat_matk_up.tres" type="Resource" id=4]
+[ext_resource path="res://data/sticker_attribute_profiles/status.tres" type="Resource" id=5]
+[ext_resource path="res://data/status_effects/stat_rdef_up.tres" type="Resource" id=6]
+[ext_resource path="res://data/status_effects/healing_steam.tres" type="Resource" id=7]
+[ext_resource path="res://data/status_effects/ap_boost.tres" type="Resource" id=8]
+[ext_resource path="res://data/status_effects/stat_speed_up.tres" type="Resource" id=9]
+[ext_resource path="res://data/status_effects/stat_mdef_up.tres" type="Resource" id=10]
+[ext_resource path="res://data/status_effects/cottoned_on.tres" type="Resource" id=11]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=12]
+[ext_resource path="res://data/status_effects/poisoned.tres" type="Resource" id=13]
+[ext_resource path="res://data/status_effects/conductive.tres" type="Resource" id=14]
+[ext_resource path="res://data/status_effects/confused.tres" type="Resource" id=15]
+[ext_resource path="res://data/status_effects/stat_rdef_down.tres" type="Resource" id=16]
+[ext_resource path="res://data/status_effects/stat_mdef_down.tres" type="Resource" id=17]
+
+[resource]
+script = ExtResource( 3 )
+name = "Fugue"
+category_name = "MOVE_CATEGORY_STATUS"
+description = "The user is cleared of all status effects then inflicted with two new status effects each turn. It hurts."
+tags = [ "enaplasia", "unsellable", "passive" ]
+priority = 0
+cost = 0
+is_debug = false
+is_passive_only = true
+power = 0
+physicality = 0
+target_type = 0
+default_target = 1
+elemental_types = [ ExtResource( 1 ) ]
+accuracy = 100
+unavoidable = true
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = false
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "hurt"
+attack_vfx = [  ]
+play_attack_vfx_against_allies = false
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = true
+can_be_copied = true
+attribute_profile = ExtResource( 5 )
+camera_state_override = ""
+status_effects = [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ) ]
+amount = 3
+varied_amounts = [  ]
+status_effects_to_apply = 1
+num_at_random = 2
+status_effects_everlasting = false
+fail_if_already_present = false
+fail_against_archangels = false
+sacrifice_hp_percent = 5
+chance = 100

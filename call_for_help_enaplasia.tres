@@ -1,0 +1,49 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://data/sticker_attribute_profiles/summon.tres" type="Resource" id=1]
+[ext_resource path="res://data/characters/blank_summon.tres" type="Resource" id=2]
+[ext_resource path="res://data/attack_vfx/bob_cry.tres" type="Resource" id=4]
+[ext_resource path="res://data/battle_move_scripts/Summon.gd" type="Script" id=6]
+
+[resource]
+script = ExtResource( 6 )
+name = "MOVE_CALL_FOR_HELP_NAME"
+category_name = "MOVE_CATEGORY_MISC"
+description = "But nobody came."
+title_override = ""
+tags = [ "enaplasia", "unsellable", "support" ]
+priority = 0
+cost = 2
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 1
+target_type = 0
+default_target = 0
+elemental_types = [  ]
+accuracy = 0
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [ ExtResource( 4 ) ]
+play_attack_vfx_against_allies = true
+attack_duration = 5.0
+hit_vfx = [  ]
+hit_delay = 5.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 1 )
+camera_state_override = ""
+character = ExtResource( 2 )
+status_effects = [  ]
+status_effect_amount = 3
+everlasting_status_effects = [  ]
+randomize_pronouns = true
+monster_form_path = ""
+tape_grade = 5

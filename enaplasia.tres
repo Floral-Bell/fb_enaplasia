@@ -1,0 +1,81 @@
+[gd_resource type="Resource" load_steps=16 format=2]
+
+[ext_resource path="res://data/MonsterForm.gd" type="Script" id=1]
+[ext_resource path="res://data/elemental_types/glitter.tres" type="Resource" id=2]
+[ext_resource path="res://data/battle_moves/bite_enaplasia.tres" type="Resource" id=5]
+[ext_resource path="res://data/battle_moves/desperation_enaplasia.tres" type="Resource" id=6]
+[ext_resource path="res://data/battle_moves/fugue.tres" type="Resource" id=7]
+[ext_resource path="res://data/battle_moves/waterworks_enaplasia.tres" type="Resource" id=8]
+[ext_resource path="res://data/tape_upgrade_scripts/TapeUpgradeMove.gd" type="Script" id=9]
+[ext_resource path="res://data/battle_moves/struggle.tres" type="Resource" id=10]
+[ext_resource path="res://data/battle_moves/call_for_help_enaplasia.tres" type="Resource" id=11]
+[ext_resource path="res://data/battle_moves/call_for_kuneko.tres" type="Resource" id=12]
+[ext_resource path="res://ui/monster_stickers/enaplasia.png" type="Texture" id=13]
+[ext_resource path="res://sfx/cries/enaplasia_cry.wav" type="AudioStream" id=14]
+
+[sub_resource type="Resource" id=1]
+resource_name = "Slot + call_for_help"
+script = ExtResource( 9 )
+add_slot = true
+sticker = ExtResource( 11 )
+
+[sub_resource type="Resource" id=2]
+resource_name = "Slot + bite"
+script = ExtResource( 9 )
+add_slot = true
+sticker = ExtResource( 5 )
+
+[sub_resource type="Resource" id=3]
+resource_name = "Slot + struggle"
+script = ExtResource( 9 )
+add_slot = true
+sticker = ExtResource( 10 )
+
+[resource]
+script = ExtResource( 1 )
+name = "Enaplasia"
+swap_colors = [ Color( 0.156863, 0.243137, 0.466667, 1 ), Color( 0.203922, 0.443137, 0.698039, 1 ), Color( 0.254902, 0.694118, 0.882353, 1 ), Color( 0.568627, 0.835294, 0.952941, 1 ), Color( 0.568627, 0.835294, 0.952941, 1 ), Color( 0.470588, 0.14902, 0.14902, 1 ), Color( 0.611765, 0.290196, 0.207843, 1 ), Color( 0.85098, 0.541176, 0.188235, 1 ), Color( 0.945098, 0.760784, 0.333333, 1 ), Color( 0.972549, 0.901961, 0.545098, 1 ), Color( 0.321569, 0.305882, 0.239216, 1 ), Color( 0.458824, 0.443137, 0.341176, 1 ), Color( 0.815686, 0.8, 0.682353, 1 ), Color( 0.933333, 0.933333, 0.886275, 1 ), Color( 0.933333, 0.933333, 0.886275, 1 ) ]
+default_palette = [  ]
+emission_palette = [  ]
+battle_cry = ExtResource( 14 )
+named_positions = {
+"attack": Vector2( 104, 57 ),
+"decoy": Vector2( 60, 79 ),
+"eye": Vector2( 13, 43 ),
+"hit": Vector2( 25, 37 )
+}
+elemental_types = [ ExtResource( 2 ) ]
+tape_sticker_texture = ExtResource( 13 )
+exp_yield = 400
+require_dlc = ""
+battle_sprite_path = "res://sprites/monsters/enaplasia.json"
+ui_sprite_path = ""
+pronouns = 1
+description = "weird fusion creature"
+max_hp = 225
+melee_attack = 125
+melee_defense = 125
+ranged_attack = 50
+ranged_defense = 125
+speed = 150
+accuracy = 100
+evasion = 100
+max_ap = 10
+move_slots = 7
+evolutions = [  ]
+evolution_specialization_question = ""
+capture_rate = 25
+exp_gradient = 42
+exp_base_level = 0
+move_tags = [ "enaplasia", "candevil", "annoy", "food", "gamble", "hot", "rage", "teeth", "wood", "junk", "hands", "parasite", "deception", "artificial_electricity", "beast", "faucetear", "cold", "kuneko", "cat", "animal", "psychic", "knife", "run", "glitter" ]
+initial_moves = [ ExtResource( 6 ), ExtResource( 7 ) ]
+tape_upgrades = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), ExtResource( 8 ), ExtResource( 12 ) ]
+unlock_ability = ""
+fusion_name_prefix = "Ena"
+fusion_name_suffix = "plasia"
+fusion_generator_path = "res://data/fusions/enaplasia.tscn"
+bestiary_index = 121
+bestiary_category = 0
+bestiary_bios = [ "Enaplasia was first sighted not long after the disappearance of a ranger named Rosemary. Those who have come into contact with her report features reminiscent of other monsters. They swear they can hear those monsters whenever Enaplasia cries out.", "Anaplasia is a condition of cells with poor cellular differentiation or none at all. Anaplasia literally means to form backward, implying loss of structural and functional differentiation of normal cells.  " ]
+bestiary_data_requirement = 0
+loot_table = ""

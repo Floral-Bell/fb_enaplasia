@@ -1,0 +1,135 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://data/fusion_scripts/FusionGenerator.gd" type="Script" id=1]
+[ext_resource path="res://data/fusion_scripts/FusionPartSlot.gd" type="Script" id=2]
+[ext_resource path="res://sprites/fusions/arms/candevil_arm_back.json" type="PackedScene" id=3]
+[ext_resource path="res://sprites/fusions/head/candevil_head.json" type="PackedScene" id=4]
+[ext_resource path="res://sprites/fusions/legs/candevil1_leg_front.json" type="PackedScene" id=5]
+[ext_resource path="res://sprites/fusions/tail/bulb_tail.json" type="PackedScene" id=6]
+[ext_resource path="res://sprites/fusions/legs/candevil1_leg_back.json" type="PackedScene" id=7]
+[ext_resource path="res://sprites/fusions/helmet/kuneko_helmet_front.json" type="PackedScene" id=8]
+[ext_resource path="res://sprites/fusions/legs/candevil2_leg_back.json" type="PackedScene" id=9]
+[ext_resource path="res://sprites/fusions/legs/candevil2_leg_front.json" type="PackedScene" id=10]
+[ext_resource path="res://sprites/fusions/helmet/candevil_helmet_back.json" type="PackedScene" id=11]
+[ext_resource path="res://sprites/fusions/body/kirikuri_body.json" type="PackedScene" id=12]
+[ext_resource path="res://sprites/fusions/arms/candevil_arm_front.json" type="PackedScene" id=13]
+
+[node name="FusionGenerator" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Arm_Back" type="Node2D" parent="."]
+position = Vector2( 24, -31 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="candevil_arm_back" parent="Arm_Back" instance=ExtResource( 3 )]
+
+[node name="Tail" type="Node2D" parent="."]
+position = Vector2( 8, 23 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bulb_tail" parent="Tail" instance=ExtResource( 6 )]
+
+[node name="FrontLeg_Back" type="Node2D" parent="."]
+visible = false
+position = Vector2( 75, 32 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="candevil2_leg_back" parent="FrontLeg_Back" instance=ExtResource( 9 )]
+
+[node name="BackLeg_Back" type="Node2D" parent="."]
+position = Vector2( 55, 41 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="candevil1_leg_back" parent="BackLeg_Back" instance=ExtResource( 7 )]
+
+[node name="BackLeg_Front" type="Node2D" parent="."]
+position = Vector2( 36, 43 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+match_part = NodePath("../BackLeg_Back")
+
+[node name="candevil1_leg_front" parent="BackLeg_Front" instance=ExtResource( 5 )]
+
+[node name="Body" type="Node2D" parent="."]
+position = Vector2( 30, 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+force_usage = true
+
+[node name="kirikuri_body" parent="Body" instance=ExtResource( 12 )]
+
+[node name="FrontLeg_Front" type="Node2D" parent="."]
+visible = false
+position = Vector2( 75, 39 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+match_part = NodePath("../FrontLeg_Back")
+
+[node name="candevil2_leg_front" parent="FrontLeg_Front" instance=ExtResource( 10 )]
+
+[node name="HelmetBack" type="Node2D" parent="."]
+position = Vector2( 27, -35 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="candevil_helmet_back" parent="HelmetBack" instance=ExtResource( 11 )]
+
+[node name="Head" type="Node2D" parent="."]
+position = Vector2( 27, -35 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+match_part = NodePath("../HelmetBack")
+inverse_match = true
+
+[node name="candevil_head" parent="Head" instance=ExtResource( 4 )]
+
+[node name="HelmetFront" type="Node2D" parent="."]
+position = Vector2( 27, -35 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+match_part = NodePath("../HelmetBack")
+
+[node name="kuneko_helmet_front" parent="HelmetFront" instance=ExtResource( 8 )]
+
+[node name="Arm_Front" type="Node2D" parent="."]
+position = Vector2( 8, -28 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+match_part = NodePath("../Arm_Back")
+
+[node name="candevil_arm_front" parent="Arm_Front" instance=ExtResource( 13 )]
+
+[node name="attack" type="Node2D" parent="."]
+position = Vector2( 94, 33 )
+
+[node name="hit" type="Node2D" parent="."]
+position = Vector2( 70, 44 )
+
+[node name="eye" type="Node2D" parent="."]
+position = Vector2( 60, 3 )

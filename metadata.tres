@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/ContentInfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = "enaplasia_monster"
+name = "Enaplasia Monster"
+version_code = 0
+version_string = "1.0"
+author = "Floral"
+save_file_format_tag = "enaplasia_monster"
+save_file_format_tag_version = 0
+network_protocol_tag = "enaplasia_monster"
+modified_files = [ "res://world/quest_scenes/passive/KunekosReturn.tscn", "res://sfx/cries/enaplasia_cry.wav", "res://sfx/cries/enaplasia_cry.wav.import", "res://data/monster_forms/enaplasia.tres", "res://sprites/monsters/enaplasia.json.import", "res://sprites/monsters/enaplasia.png", "res://sprites/monsters/enaplasia.png.import", "res://data/battle_move_scripts/PassiveRoundStatChange.gd", "res://data/battle_moves/bite_enaplasia.tres", "res://data/battle_moves/desperation_enaplasia.tres", "res://data/battle_moves/fugue.tres", "res://data/battle_moves/waterworks_enaplasia.tres", "res://data/battle_moves/struggle.tres", "res://data/battle_moves/call_for_help_enaplasia.tres", "res://data/battle_moves/call_for_kuneko.tres", "res://data/fusions/enaplasia.tscn", "res://data/monster_spawn_profiles/brokenhead.tres", "res://ui/monster_stickers/enaplasia.png", "res://ui/monster_stickers/enaplasia.png.import" ]
+modified_dirs = [  ]

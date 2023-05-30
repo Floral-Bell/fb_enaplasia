@@ -1,0 +1,61 @@
+[gd_resource type="Resource" load_steps=14 format=2]
+
+[ext_resource path="res://data/monster_forms/sirenade.tres" type="Resource" id=1]
+[ext_resource path="res://data/monster_forms/kittelly.tres" type="Resource" id=2]
+[ext_resource path="res://data/monster_forms/clocksley.tres" type="Resource" id=3]
+[ext_resource path="res://data/spawn_config_scripts/MonsterSpawnProfile.gd" type="Script" id=4]
+[ext_resource path="res://data/monster_forms/brushroom.tres" type="Resource" id=5]
+[ext_resource path="res://data/monster_forms/spirouette.tres" type="Resource" id=6]
+[ext_resource path="res://data/monster_forms/pombomb.tres" type="Resource" id=7]
+[ext_resource path="res://world/monsters/Elfless.tscn" type="PackedScene" id=8]
+[ext_resource path="res://data/map_metadata/overworld_chunk_metadata/overworld_-7_-7.tres" type="Resource" id=9]
+[ext_resource path="res://data/map_metadata/overworld_chunk_metadata/overworld_-6_-7.tres" type="Resource" id=10]
+[ext_resource path="res://data/monster_forms/elfless.tres" type="Resource" id=11]
+[ext_resource path="res://world/monsters/Pombomb.tscn" type="PackedScene" id=12]
+[ext_resource path="res://data/monster_forms/enaplasia.tres" type="Resource" id=13]
+
+[resource]
+script = ExtResource( 4 )
+spawn_configs = [  ]
+habitat_name = "REGION_NAME_BROKENHEAD"
+habitat_require_flag = "visited_brokenhead"
+habitat_overworld_chunks = [ ExtResource( 9 ), ExtResource( 10 ) ]
+habitat_endless = true
+min_team_size = 1
+max_team_size = 2
+disable_fleeing = false
+num_species = 8
+species_0/monster_form = ExtResource( 11 )
+species_0/world_monster = ExtResource( 8 )
+species_0/weight = 1.0
+species_0/hour_min = 0.0
+species_0/hour_max = 24.0
+species_1/monster_form = ExtResource( 7 )
+species_1/world_monster = ExtResource( 12 )
+species_1/weight = 1.0
+species_1/hour_min = 0.0
+species_1/hour_max = 24.0
+species_2/monster_form = ExtResource( 2 )
+species_2/weight = 1.0
+species_2/hour_min = 0.0
+species_2/hour_max = 24.0
+species_3/monster_form = ExtResource( 3 )
+species_3/weight = 1.0
+species_3/hour_min = 0.0
+species_3/hour_max = 24.0
+species_4/monster_form = ExtResource( 5 )
+species_4/weight = 1.0
+species_4/hour_min = 0.0
+species_4/hour_max = 24.0
+species_5/monster_form = ExtResource( 1 )
+species_5/weight = 1.0
+species_5/hour_min = 0.0
+species_5/hour_max = 24.0
+species_6/monster_form = ExtResource( 6 )
+species_6/weight = 1.0
+species_6/hour_min = 0.0
+species_6/hour_max = 24.0
+species_7/monster_form = ExtResource( 13 )
+species_7/weight = 1.0
+species_7/hour_min = 0.0
+species_7/hour_max = 24.0

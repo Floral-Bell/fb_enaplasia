@@ -1,0 +1,54 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://data/attack_vfx/swoosh_simple.tres" type="Resource" id=1]
+[ext_resource path="res://data/hit_vfx/desperation.tres" type="Resource" id=2]
+[ext_resource path="res://data/battle_move_scripts/Desperation.gd" type="Script" id=3]
+[ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 3 )
+name = "MOVE_DESPERATION_NAME"
+category_name = "MOVE_CATEGORY_MELEE"
+description = "Does more damage if the user is low on health. Your head is spinning."
+title_override = ""
+tags = [ "enaplasia", "unsellable", "offense" ]
+priority = 0
+cost = 1
+is_debug = false
+is_passive_only = false
+power = 20
+physicality = 0
+target_type = 1
+default_target = 3
+elemental_types = [  ]
+accuracy = 100
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [ ExtResource( 1 ) ]
+play_attack_vfx_against_allies = false
+attack_duration = 0.01
+hit_vfx = [ ExtResource( 2 ) ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 4 )
+camera_state_override = ""
+min_hits = 1
+max_hits = 1
+target_status_effects = [  ]
+user_status_effects = [  ]
+status_effects_to_apply = 0
+status_effect_amount = 3
+status_effect_chance = 0
+status_effect_only_for_target_types = [  ]
+target_status_only_if_not_had_turn = false
+destroys_walls = false
+require_target_tag = ""
+power_hp_coefficient = 100

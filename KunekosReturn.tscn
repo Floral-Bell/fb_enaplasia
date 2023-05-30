@@ -1,0 +1,177 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://nodes/encounter_config/EncounterConfig.gd" type="Script" id=1]
+[ext_resource path="res://nodes/encounter_config/CharacterConfig.gd" type="Script" id=2]
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=3]
+[ext_resource path="res://nodes/actions/BattleAction.gd" type="Script" id=4]
+[ext_resource path="res://nodes/actions/RemoveNodeAction.gd" type="Script" id=5]
+[ext_resource path="res://nodes/actions/PlayAudioAction.gd" type="Script" id=6]
+[ext_resource path="res://nodes/actions/QuestCompleteAction.gd" type="Script" id=7]
+[ext_resource path="res://sprites/portraits/kuneko_angry.png" type="Texture" id=8]
+[ext_resource path="res://world/recurring_npcs/Kuneko.tscn" type="PackedScene" id=9]
+[ext_resource path="res://data/monster_forms/kuneko.tres" type="Resource" id=10]
+[ext_resource path="res://world/quest_scenes/passive/UniqueMonsterSpawn.gd" type="Script" id=11]
+[ext_resource path="res://data/character_sfx/kuneko_sfx.tres" type="Resource" id=12]
+[ext_resource path="res://nodes/encounter_config/RandomTapeConfig.gd" type="Script" id=13]
+[ext_resource path="res://menus/boss_title/TitleBanner.tscn" type="PackedScene" id=14]
+[ext_resource path="res://menus/boss_title/TitleBannerConfig.gd" type="Script" id=15]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=16]
+[ext_resource path="res://sprites/portraits/kuneko_awkward.png" type="Texture" id=17]
+[ext_resource path="res://nodes/actions/PlayNPCAnimationAction.gd" type="Script" id=18]
+[ext_resource path="res://battle/ai/kuneko/KunekosReturn.tscn" type="PackedScene" id=19]
+[ext_resource path="res://sfx/cutscene/kuneko_teleport.wav" type="AudioStream" id=20]
+[ext_resource path="res://data/loot_tables/battle_kuneko.tres" type="Resource" id=21]
+[ext_resource path="res://data/characters/blank_monster_unique_miniboss.tres" type="Resource" id=22]
+[ext_resource path="res://sfx/voices/kuneko/kuneko_greeting.wav" type="AudioStream" id=23]
+[ext_resource path="res://sfx/voices/kuneko/kuneko_surprise_1.wav" type="AudioStream" id=24]
+[ext_resource path="res://data/monster_forms/enaplasia.tres" type="Resource" id=25]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 15 )
+banner_scene = ExtResource( 14 )
+title = "KUNEKO_NAME"
+subtitle = "KUNEKO_SUBTITLE"
+title_subs = {
+}
+tutorial = ""
+title_is_monster_name = false
+
+[node name="KunekosReturn" type="Spatial"]
+script = ExtResource( 11 )
+
+[node name="Monster" parent="." instance=ExtResource( 9 )]
+
+[node name="EncounterConfig" type="Node" parent="Monster"]
+script = ExtResource( 1 )
+loot_table_override = ExtResource( 21 )
+title_banner = SubResource( 1 )
+
+[node name="Boss" type="Node" parent="Monster/EncounterConfig"]
+script = ExtResource( 2 )
+pronouns = 1
+team_name_override = "BATTLE_ADJECTIVE_FRIEND"
+level_scale_override_key = "monster_miniboss"
+exp_yield = 160
+base_character = ExtResource( 22 )
+character_sfx = ExtResource( 12 )
+human_colors = {
+"body_color_1": -1,
+"body_color_2": -1,
+"eye_color": -1,
+"face_accessory_color": -1,
+"favorite_color": -1,
+"hair_accessory_color": -1,
+"hair_color": -1,
+"legs_color": -1,
+"shoe_color": -1,
+"skin_color": -1
+}
+human_part_names = {
+"arms": "",
+"body": "",
+"hair": "",
+"head": "",
+"legs": ""
+}
+ai = ExtResource( 19 )
+human_colors/body_color_1 = -1
+human_colors/body_color_2 = -1
+human_colors/eye_color = -1
+human_colors/face_accessory_color = -1
+human_colors/favorite_color = -1
+human_colors/hair_accessory_color = -1
+human_colors/hair_color = -1
+human_colors/legs_color = -1
+human_colors/shoe_color = -1
+human_colors/skin_color = -1
+
+[node name="RandomTapeConfig" type="Node" parent="Monster/EncounterConfig/Boss"]
+script = ExtResource( 13 )
+form = ExtResource( 10 )
+seed_key = "boss"
+bootleg_rate = 0.02
+profile_evolution_rate = 0.0
+non_profile_rate = 0.0
+
+[node name="Support" type="Node" parent="Monster/EncounterConfig"]
+script = ExtResource( 2 )
+pronouns = 3
+human_colors = {
+"body_color_1": -1,
+"body_color_2": -1,
+"eye_color": -1,
+"face_accessory_color": -1,
+"favorite_color": -1,
+"hair_accessory_color": -1,
+"hair_color": -1,
+"legs_color": -1,
+"shoe_color": -1,
+"skin_color": -1
+}
+human_part_names = {
+"arms": "",
+"body": "",
+"hair": "",
+"head": "",
+"legs": ""
+}
+human_colors/body_color_1 = -1
+human_colors/body_color_2 = -1
+human_colors/eye_color = -1
+human_colors/face_accessory_color = -1
+human_colors/favorite_color = -1
+human_colors/hair_accessory_color = -1
+human_colors/hair_color = -1
+human_colors/legs_color = -1
+human_colors/shoe_color = -1
+human_colors/skin_color = -1
+
+[node name="RandomTapeConfig" type="Node" parent="Monster/EncounterConfig/Support"]
+script = ExtResource( 13 )
+form = ExtResource( 25 )
+seed_key = "sidekick"
+
+[node name="InteractionBehavior" type="Node" parent="Monster"]
+script = ExtResource( 3 )
+wait_for_animation = false
+world_mode = 0
+
+[node name="MessageDialogAction" type="Node" parent="Monster/InteractionBehavior"]
+script = ExtResource( 16 )
+portrait = ExtResource( 17 )
+audio = ExtResource( 23 )
+title = "KUNEKO_NAME"
+messages = [ "KUNEKOS_RETURN_PRE_BATTLE" ]
+
+[node name="BattleAction" type="Node" parent="Monster/InteractionBehavior"]
+script = ExtResource( 4 )
+result_on_player_win = 1
+result_on_player_loss = 0
+result_on_flee = 0
+
+[node name="MessageDialogAction2" type="Node" parent="Monster/InteractionBehavior"]
+script = ExtResource( 16 )
+portrait = ExtResource( 8 )
+audio = ExtResource( 24 )
+title = "KUNEKO_NAME"
+messages = [ "KUNEKOS_RETURN_POST_BATTLE" ]
+
+[node name="QuestCompleteAction" type="Node" parent="Monster/InteractionBehavior"]
+script = ExtResource( 7 )
+
+[node name="PlayAudioAction" type="Node" parent="Monster/InteractionBehavior"]
+script = ExtResource( 6 )
+stream = ExtResource( 20 )
+wait_for_finish = false
+
+[node name="PlayNPCAnimationAction" type="Node" parent="Monster/InteractionBehavior"]
+script = ExtResource( 18 )
+animation = "teleport"
+loop = false
+
+[node name="RemoveNodeAction" type="Node" parent="Monster/InteractionBehavior"]
+script = ExtResource( 5 )
+__meta__ = {
+"action_tree": true
+}
+animation = 0
