@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 id = "enaplasia_monster"
 name = "Enaplasia Monster"
-version_code = 0
+version_code = 1
 version_string = "1.0"
 author = "Floral"
 save_file_format_tag = "enaplasia_monster"
